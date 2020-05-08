@@ -5,8 +5,12 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        String url = "jdbc:mysql://localhost:3306/leofirmeza";
+        String user = "root";
+        String password = "example";
+
         ResultSet resultSet = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/leofirmeza", "root", "example")
+                .getConnection(url, user, password)
                 .prepareStatement("select * from users")
                 .executeQuery();
 
