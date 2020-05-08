@@ -1,13 +1,15 @@
+package com.github.leonardofirmeza.project1;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
-public class Main {
+public class Application {
 
     public static void main(String[] args) throws Exception {
 
-        String url = "jdbc:mysql://localhost:3306/leofirmeza";
-        String user = "root";
-        String password = "example";
+        String url = System.getenv("DB_URL");
+        String user = System.getenv("DB_USER");
+        String password = System.getenv("DB_PASS");
 
         ResultSet resultSet = DriverManager
                 .getConnection(url, user, password)
